@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="index.css">
+	<head>
+		<meta charset="UTF-8">
+		<title>Start Page</title>
+	</head>
+	<body>
+	 
+		<div class="links" id="stuff">
+		
+			<div class="link">
+				<a href="https://github.com/waltr21"><img src="github.png" alt="" width="150" height="150"></a>
+			</div>
+		
+			<div class="link">
+				<a href="https://reddit.com"><img src="reddit.png" alt="" width="150" height="150"></a>
+			</div>
+		
+			<div class="link">
+				<a href="https://youtube.com"><img src="youtube.png" alt="" width="150" height="150"></a>
+			</div>
+		
+			<div class="link">
+				<a href="https://google.com"><img src="google.png" alt="" width="150" height="150"></a>
+			</div>
+	
+			<div class="searchItem" id="search"></div>
+				
+		</div>
+		
+	</body>
+
+	
+	
+	<script>
+		document.addEventListener("keydown", e => {
+			//console.log(e.keyCode);
+			var code = e.keyCode;
+			//console.log(code);
+
+			var val = document.getElementById("search").innerHTML;
+			
+			blurFunction(1);
+
+			//Back
+			if (code == 8){
+				val = val.substring(0, val.length-1);
+				document.getElementById("search").innerHTML = val;
+				
+				if (val.length <= 0){
+					blurFunction(0);
+				}
+			}
+			//Enter
+			else if (code == 13){
+				window.location.href = "https://google.com/search?q=" + val;
+			}
+			//Esc
+			else if (code == 27){
+				document.getElementById("search").innerHTML = "";
+				blurFunction(0);
+			}
+			else if (code >= 32){
+    			document.getElementById("search").innerHTML += e.key;
+			}
+			else if (code >= 48 && code <= 90){
+    			document.getElementById("search").innerHTML += e.key;
+			}
+			else if (code >= 96 && code <= 111){
+    			document.getElementById("search").innerHTML += e.key;
+			}
+			else if (code >= 186 && code <= 222){
+    			document.getElementById("search").innerHTML += e.key;
+			}
+		});
+
+		var blurFunction = function(state){
+			var element = document.getElementById("stuff");
+			
+			if (state){
+				
+				element.setAttribute("class", "linksAway");
+
+			}
+			else{
+			
+				element.setAttribute("class", "linksBack");
+			}
+		};
+	</script>
+
+</html>

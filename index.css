@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin');
+
+body {
+	background-color: #292631;
+	
+}
+
+
+
+.links{
+	text-align: center;
+}
+
+.linksAway{
+	text-align: center;
+	position: relative;
+	animation-name: slideAway;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+}
+
+.linksBack{
+	text-align: center;
+	position: relative;
+	animation-name: slideBack;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;	
+}
+
+
+
+@keyframes slideAway{
+	0%   {left:0px; top:0px;}
+	100% {left:-100vw; top:0px;}
+}
+
+@keyframes slideBack{
+	0%   {left:-100vw; top:0px;}
+	100% {left:0px; top:0px;}
+}
+
+@keyframes slideUp{
+	0%   {left:-100vw; top:0px;}
+	100% {left:0px; top:0px;}
+}
+
+.link{
+	display: inline-block;
+	padding: 40px;
+}
+
+.searchItem{
+	text-align: center;
+	color: white;
+	font-family: Libre Franklin;
+	font-size: 7em;
+	position: relative;
+	left: 100vw;
+
+ 
+}
