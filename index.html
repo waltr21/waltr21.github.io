@@ -24,11 +24,11 @@
 			<div class="link">
 				<a href="https://google.com"><img src="google.png" alt="" width="150" height="150"></a>
 			</div>
-	
-			<div class="searchItem" id="search"></div>
 				
 		</div>
-		
+		<div id="searchClass">
+		<div class="searchItem" id="search"></div>	
+		</div>
 	</body>
 
 	
@@ -61,7 +61,7 @@
 				document.getElementById("search").innerHTML = "";
 				blurFunction(0);
 			}
-			else if (code >= 32){
+			else if (code == 32){
     			document.getElementById("search").innerHTML += e.key;
 			}
 			else if (code >= 48 && code <= 90){
@@ -76,16 +76,16 @@
 		});
 
 		var blurFunction = function(state){
-			var element = document.getElementById("stuff");
+			var element = document.getElementById("searchClass");
 			
 			if (state){
 				
-				element.setAttribute("class", "linksAway");
+				element.setAttribute("class", "searchUp");
 
 			}
 			else{
 			
-				element.setAttribute("class", "linksBack");
+				element.setAttribute("class", null);	
 			}
 		};
 	</script>

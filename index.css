@@ -40,8 +40,13 @@ body {
 }
 
 @keyframes slideUp{
-	0%   {left:-100vw; top:0px;}
-	100% {left:0px; top:0px;}
+	0%   {top: 0px;}
+	100% {top: -90vh;}
+}
+
+@keyframes slideDown{
+	0%   {top:-90vh;}
+	100% {top:0px;}
 }
 
 .link{
@@ -55,7 +60,13 @@ body {
 	font-family: Libre Franklin;
 	font-size: 7em;
 	position: relative;
-	left: 100vw;
+	top: 100vh;
+}
 
- 
+.searchUp{
+	text-align: center;
+	position: relative;
+	animation-name: slideUp;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
 }
